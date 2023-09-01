@@ -13,14 +13,17 @@ export default {
 
 <!-- VIEW -->
 <template>
-  <div
-    v-for="events in historyData"
-    class="timeline-card-container"
-  >
-    <div class="timeline-card">
+  <div class="timeline-card-container">
+    <div
+      class="timeline-card"
+      v-for="events in historyData"
+      :key="events.title"
+    >
       <img :src="events?.imageUrl" alt="" />
-      <h3>{{ events.title }}</h3>
-      <p>{{ events.description }}</p>
+      <div class="card-head">
+        <h3>{{ events.title }}</h3>
+        <p>{{ events.description }}</p>
+      </div>
       <div class="period">
         Period
         <div class="years">
@@ -37,11 +40,32 @@ export default {
 
 <!-- STYLES -->
 <style scoped lang="scss">
+@import '../assets/variables.scss';
 .timeline-card-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+
   .timeline-card {
+    background-color: #cfcfcf;
+    padding: 1rem;
+    min-width: 350px;
+    border-radius: $border-radius;
+
+    .period {
+      margin: 0 auto;
+      text-align: center;
+      background-color: $text;
+      color: $background;
+
+      .years {
+        background-color: $background;
+      }
+    }
+
     img {
-      width: 250px;
-      height: 250px;
+      width: 100%;
+      height: 200px;
       object-fit: cover;
       object-position: center;
 

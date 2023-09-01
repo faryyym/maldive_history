@@ -7,12 +7,12 @@ $text: #333;
 // Typography
 $font-family: Inter, system-ui, Avenir, Helvetica,
   Arial, sans-serif;
-$font-size: 16px;
+$font-size: 15px;
 $heading-font: 'Avenir', sans-serif;
 $paragraph-line-height: 1.5;
 $heading-line-height: 1.2;
-$heading-color: #444;
-$paragraph-color: #444;
+$heading-color: $text;
+$paragraph-color: $text;
 
 // Spacing and Layout
 $spacing-unit: 0.5rem;
@@ -21,7 +21,7 @@ $content-padding: 1.25rem;
 $section-margin: 2.5rem;
 
 // Borders and Shadows
-$border-radius: 0.25rem;
+$border-radius: 1rem;
 $box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
 // Buttons
