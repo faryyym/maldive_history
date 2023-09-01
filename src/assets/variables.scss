@@ -1,0 +1,62 @@
+$primary: #bd4d49;
+$secondary: #1f7992;
+$accent: #ff9900;
+$background: #f5f5f5;
+$text: #333;
+
+// Typography
+$font-family: Inter, system-ui, Avenir, Helvetica,
+  Arial, sans-serif;
+$font-size: 16px;
+$heading-font: 'Avenir', sans-serif;
+$paragraph-line-height: 1.5;
+$heading-line-height: 1.2;
+$heading-color: #444;
+$paragraph-color: #444;
+
+// Spacing and Layout
+$spacing-unit: 0.5rem;
+$container-max-width: var(--breakpoint-medium);
+$content-padding: 1.25rem;
+$section-margin: 2.5rem;
+
+// Borders and Shadows
+$border-radius: 0.25rem;
+$box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+// Buttons
+$button-background-color: $primary;
+$button-border-color: $primary;
+$button-text-color: #fff;
+$button-padding: 0.625rem 1.25rem;
+$button-border-radius: 0.25rem;
+$search-button-border-radius: 0 0.25rem 0.25rem 0;
+
+// Forms
+$input-placeholder-color: #a1a1a1;
+$input-border: 1px solid #ccc;
+$input-border-radius: 0.25rem;
+$input-padding: $button-padding;
+$input-focus-outline: 1px solid $primary;
+$form-label-color: #777;
+$search-input-border-radius: 0.25rem 0 0 0.25rem;
+
+// Responsive Design
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 992px;
+
+// Z-Index
+$z-index-header: 100;
+$z-index-modal: 200;
+
+// Animations and Transitions
+$td200: 200ms;
+$td300: 300ms;
+$td500: 500ms;
+$td800: 800ms;
+$transition-easing: ease-in-out;
+
+// testing
+$debug: 1px dashed coral;
+$outline: 1px solid #ccc;
