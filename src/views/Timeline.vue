@@ -60,14 +60,18 @@ export default {
 .timeline-card-container {
   display: flex;
   align-items: baseline;
+  // justify-content: center;
   gap: 1rem;
   background: url(https://t3.ftcdn.net/jpg/01/75/08/78/360_F_175087816_OKomPkKcnagkeFPFo4ru4yHIAZxnojh2.jpg);
-  overflow: hidden;
+  overflow-x: scroll;
+  height: 100vh;
+  padding: 0 1rem;
 
   .timeline-card {
     background-color: $background;
     padding: 1rem;
-    min-width: 350px;
+    min-width: 500px;
+    // overflow: hidden;
     border-radius: $border-radius;
     @include glass();
 
