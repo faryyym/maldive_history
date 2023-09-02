@@ -60,3 +60,25 @@ $transition-easing: ease-in-out;
 // testing
 $debug: 1px dashed coral;
 $outline: 1px solid #ccc;
+
+@mixin glass(
+  $background: white,
+  $background-opacity: 0.2,
+  $border-radius: 16px,
+  $blur: 5px,
+  $box-shadow: 0.1,
+  $border-shadow: 0.3
+) {
+  /* From https://css.glass */
+  background: rgba(
+    $background,
+    $background-opacity
+  );
+  border-radius: $border-radius;
+  box-shadow: 0 4px 30px
+    rgba(0, 0, 0, $box-shadow);
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid
+    rgba(255, 255, 255, $border-shadow);
+}

@@ -35,7 +35,7 @@ export default {
       v-for="events in historyData"
       :key="events.title"
     >
-      <img :src="events?.imageUrl" alt="" />
+      <img :src="events?.imageUrl" />
       <div class="card-head">
         <h3>{{ events.title }}</h3>
         <p>{{ events.description }}</p>
@@ -59,16 +59,17 @@ export default {
 @import '../assets/variables.scss';
 .timeline-card-container {
   display: flex;
-  align-items: flex-start;
+  align-items: baseline;
   gap: 1rem;
-  max-width: 900px;
-  background-color: bisque;
-  overflow-x: scroll;
+  background: url(https://t3.ftcdn.net/jpg/01/75/08/78/360_F_175087816_OKomPkKcnagkeFPFo4ru4yHIAZxnojh2.jpg);
+  overflow: hidden;
+
   .timeline-card {
-    background-color: #cfcfcf;
+    background-color: $background;
     padding: 1rem;
     min-width: 350px;
     border-radius: $border-radius;
+    @include glass();
 
     .period {
       margin: 0 auto;
@@ -82,10 +83,11 @@ export default {
     }
 
     img {
-      width: 100%;
+      width: 200px;
       height: 200px;
       object-fit: cover;
       object-position: center;
+      mix-blend-mode: multiply;
 
       &[src=''] {
         display: none;
