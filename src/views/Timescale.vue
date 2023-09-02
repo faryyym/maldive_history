@@ -1,5 +1,7 @@
 <!-- LOGIC -->
 <script>
+import historyData from '../../db.json'
+
 export default {
   name: 'Timescale',
   data() {
@@ -8,6 +10,8 @@ export default {
         { length: 194 },
         (_, i) => 100 + i * 10
       ),
+
+      historyData,
     }
   },
 }
@@ -25,6 +29,18 @@ export default {
       >
         <span class="up-arrow"></span>
         {{ decade }}
+        <div class="years">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+          <div>9</div>
+          <div>10</div>
+        </div>
       </div>
     </div>
   </div>
@@ -45,12 +61,12 @@ export default {
 
   .decades {
     display: flex;
-    gap: 10rem;
+    /* gap: 10rem; */
 
     .decade {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      /* align-items: center; */
       padding: 0;
       margin: 0;
       .up-arrow {
@@ -59,7 +75,12 @@ export default {
         border-left: 5px solid transparent;
         border-right: 5px solid transparent;
         border-top: 10px solid red; /* Change 'blue' to your desired color */
-        display: inline-block;
+        /* display: inline-block; */
+      }
+
+      .years {
+        display: flex;
+        align-items: flex-end;
       }
     }
   }
