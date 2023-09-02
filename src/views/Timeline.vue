@@ -8,12 +8,28 @@ export default {
       historyData,
     }
   },
+
+  methods: {
+    horizontalScroll(event) {
+      if (event.deltaY !== 0) {
+        event.preventDefault()
+      }
+
+      event.currentTarget.scrollLeft +=
+        event.deltaY
+
+      // Prevent the default scroll behavior
+    },
+  },
 }
 </script>
 
 <!-- VIEW -->
 <template>
-  <div class="timeline-card-container">
+  <div
+    class="timeline-card-container"
+    @wheel="horizontalScroll($event)"
+  >
     <div
       class="timeline-card"
       v-for="events in historyData"
@@ -45,7 +61,9 @@ export default {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-
+  max-width: 900px;
+  background-color: bisque;
+  overflow-x: scroll;
   .timeline-card {
     background-color: #cfcfcf;
     padding: 1rem;
