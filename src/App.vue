@@ -1,28 +1,32 @@
 <template>
-  <div class="timeline">
-    <div class="line"></div>
-    <div class="content">
-      <div class="markers">
-        <div v-for="year in timelineYears" :key="year" class="marker">
-          {{ year }}
-        </div>
+  <h1>App</h1>
+  <div class="container">
+    <div
+      v-for="yearData in yearEvents"
+      :key="yearData.year"
+      :id="yearData.year"
+      :class="{ year: true, 'highlighted-year': yearData.title !== '' }"
+    >
+      <h3>{{ yearData.year }}</h3>
+      <div class="event">
+        <h2>{{ yearData.title }}</h2>
+        <p>{{ yearData.description }}</p>
       </div>
-      <div class="events">
-        <div v-for="data in historyData" :key="data.year" class="event">
-          <div class="event-year">{{ data.year }}</div>
-          <div class="event-title">{{ data.title }}</div>
-          <!-- Include other event details here -->
-        </div>
-      </div>
+      <!-- Add other content here -->
     </div>
   </div>
 </template>
 
 <script>
+import historicalData from './assets/historicalData.json'
+
 export default {
+  name: 'App',
   data() {
     return {
-      historyData: [
+      maxYears: 2000,
+      startYear: 150,
+      eventsData: [
         {
           year: 'c. 150',
           title: 'Brief mention of the Maldives by Ptolemy',
@@ -55,61 +59,44 @@ export default {
           imageUrl: '',
         },
       ],
-      maxYear: 2000,
     }
   },
   computed: {
-    timelineYears() {
-      const interval = 100 // Mark every 100 years
-      const years = []
-      for (let i = 0; i <= this.maxYear; i += interval) {
-        years.push(i)
+    yearEvents() {
+      const yearEvents = []
+      for (let i = this.startYear; i <= this.maxYears; i++) {
+        const eventData = this.eventsData.find(
+          (event) => event.start_year === i.toString()
+        )
+        if (eventData) {
+          yearEvents.push(eventData)
+        } else {
+          yearEvents.push({ year: i.toString(), title: '', description: '' }) // Or any default placeholder
+        }
       }
-      return years
+      return yearEvents
     },
   },
+  mounted() {},
 }
 </script>
 
-<style>
-.timeline {
-  display: flex;
-  align-items: flex-start;
-  height: 100%; /* Adjust the height according to your layout */
-  margin-top: 1rem;
-}
-
-.line {
-  width: 5px;
-  margin-left: 1rem;
-  height: 100%;
-  background-color: #6c6c6c;
-  z-index: 99;
-}
-
-.content {
-  display: flex;
-  margin-left: 2rem; /* Adjust spacing */
-}
-
-.markers {
-  margin-right: 1rem; /* Adjust spacing */
-  width: 50px;
-}
-
-.marker {
-  width: 30px;
-  text-align: center;
-  font-size: 12px;
-  color: #555;
-  margin-bottom: 10rem; /* Adjust the distance between years */
-}
-
-.events {
-  /* Style your events container as needed */
+<style scoped>
+.year {
+  /* Your styles for year blocks */
 }
 
 .event {
-  /* Style your individual events as needed */
+  position: absolute;
+  left: 75px;
+  transform: translateY(-30px);
+  color: black;
+  outline: 1px solid coral;
+
+  /* top: 0; */
+}
+
+.highlighted-year {
+  color: coral;
 }
 </style>
