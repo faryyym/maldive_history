@@ -8,10 +8,17 @@
       :id="yearData.year"
       :class="{ year: true, 'highlighted-year': yearData.title !== '' }"
     >
-      <h3>{{ yearData.year }}</h3>
+      <h3 class="year_h3">{{ yearData.year }}</h3>
       <div class="event" v-if="yearData.title">
         <h2>{{ yearData.title }}</h2>
         <p>{{ yearData.description }}</p>
+        <div class="period">
+          <h3>Period</h3>
+          <p>
+            {{ yearData.start_year }}
+            <span v-if="yearData.end_year">- {{ yearData.end_year }}</span>
+          </p>
+        </div>
       </div>
       <!-- Add other content here -->
     </div>
@@ -83,7 +90,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .container {
   position: relative;
   height: 100%; /* Make the container full height */
@@ -92,29 +99,40 @@ export default {
   position: absolute;
   width: 10px;
   height: 100%; /* Set the line height to 100% of the parent's height */
-  background-color: coral;
+  background-color: $primary;
 }
 .year {
   /* Your styles for year blocks */
   color: #6b6b6b;
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   margin: 2rem;
+  font-size: 1rem;
 }
 
 .event {
   position: relative;
-  left: 75px;
-  transform: translateY(-30px);
+  left: 1rem;
+  transform: translateY(10px);
   color: black;
   padding: 1rem;
-  border-radius: 1rem;
+  border-radius: 0 1rem 1rem 0;
 
-  outline: 1px solid coral;
+  border: 1px solid $primary;
+  border-left: 5px solid $primary;
+
   max-width: 500px;
 }
 
 .highlighted-year {
-  color: coral;
+  color: $primary;
+
+  .year_h3 {
+    font-size: 2rem;
+  }
+}
+
+.period {
+  margin-top: 1rem;
 }
 </style>
