@@ -157,7 +157,7 @@ export default {
 }
 
 .event {
-  // position: relative;
+  position: relative;
   // left: 1rem;
   // transform: translateY(10px);
   color: black;
@@ -166,9 +166,22 @@ export default {
 
   border: 1px solid $primary;
   border-left: 5px solid $primary;
-
   max-width: 400px;
   margin: 0.35rem 1rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('./assets/stone_texture.jpg');
+    background-size: 50%;
+    opacity: 30%;
+    border-radius: 0 1rem 1rem 0;
+  }
 
   @include mobile {
     font-size: 1rem;
@@ -224,5 +237,9 @@ export default {
     max-width: 100%;
     margin-top: 1rem;
   }
+}
+
+h2 {
+  font-family: 'Taviraj', serif;
 }
 </style>
