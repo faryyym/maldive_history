@@ -14,6 +14,9 @@
         class="event"
         v-if="yearData.title"
         @click="toggleInfo(yearData.year)"
+        :style="
+          yearData.imageUrl ? { padding: '1rem' } : { padding: '0.5rem 1rem' }
+        "
       >
         <div class="title-container">
           <img
@@ -126,7 +129,7 @@ export default {
 <style scoped lang="scss">
 .container {
   position: relative;
-  height: 100%; /* Make the container full height */
+  // height: 100%; /* Make the container full height */
 }
 .line {
   position: absolute;
@@ -136,7 +139,7 @@ export default {
 }
 .year {
   /* Your styles for year blocks */
-  color: #6b6b6b;
+  color: $grey;
   display: flex;
   // flex-direction: column;
   margin-left: 2rem;
@@ -145,6 +148,7 @@ export default {
 
   &:hover > .year_h3 {
     font-size: 1rem;
+    color: $text;
   }
 
   .year_h3 {
@@ -163,7 +167,7 @@ export default {
   border: 1px solid $primary;
   border-left: 5px solid $primary;
 
-  max-width: 700px;
+  max-width: 400px;
   margin: 0.35rem 1rem;
 
   @include mobile {
@@ -188,29 +192,16 @@ export default {
   }
 }
 
-// .additional-info {
-//   height: 0;
-//   overflow: hidden;
-//   transition: height 0.5s ease;
-// }
-
-// .year:hover .additional-info {
-//   height: 100px; /* Set a height that accommodates your content */
-// }
-
 .additional-info {
-  transition: max-height 0.5s ease;
+  transition: max-height 0.5s ease, margin 0.75s ease;
   max-height: 0;
   overflow: hidden;
-
-  /* other styles... */
 }
 
 .show-info {
   height: 100%;
-  max-height: 1000px; /* Set a value larger than your expected content height */
-
-  /* other styles... */
+  max-height: 1000px;
+  margin: 1rem 0;
 }
 .period {
   margin-top: 1rem;
@@ -218,11 +209,20 @@ export default {
 
 .title-container {
   display: flex;
+  @include mobile {
+    flex-direction: column-reverse;
+  }
 }
 
 .image {
-  // border-radius: 100%;
-  max-width: 200px;
-  // height: auto;
+  border-radius: 1rem;
+  border: 1px solid $grey;
+  max-width: 100px;
+  margin-right: 1rem;
+
+  @include mobile {
+    max-width: 100%;
+    margin-top: 1rem;
+  }
 }
 </style>

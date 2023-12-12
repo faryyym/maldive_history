@@ -284,13 +284,15 @@
     "title": "Reign of Sulṭān Muḥammad al-Jamīl (Jamal al-Dīn)",
     "description": "Muhammad al-Jamil was the husband of Sulṭāna Khadijah and assumed the reign forcibly. He reigned for one year before being murdered by the Sulṭāna.",
     "reference": ["31"],
-    "imageUrl": ""
+    "imageUrl": "",
+    "year": "1363"
   },
   {
     "start_year": "1364",
     "end_year": "1373",
     "title": "Second Reign of Sulṭāna Rehendi (Khadījah) Kabadi Kilege",
     "description": "",
+    "year": "1364",
     "reference": ["32"],
     "imageUrl": ""
   },
@@ -300,11 +302,14 @@
     "title": "Reign of Sulṭān ‘Abdullah I",
     "description": "‘Abdullah I took the throne by force from his wife Sulṭāna Rehendi.",
     "reference": ["33"],
+    "year": "1373",
+
     "imageUrl": ""
   },
   {
     "start_year": "1376",
     "end_year": "1379",
+    "year": "1376",
     "title": "Third Reign of Sulṭāna Rehendi (Khadijah) Kabadi Kilege",
     "description": "Sulṭāna Rehendi seized the throne by killing her husband Sulṭān ‘Abdullah I.",
     "reference": ["34"],
@@ -865,7 +870,7 @@
     "end_year": "1691",
     "title": "Reign of Sulṭān Kuda Muḥammad",
     "description": "Sulṭān Kuda Muḥammad was the son of Sulṭān Iskandar Ibrahīm and his concubine Mariyam Kabafanu. His mother seized rule on behalf of him and appointed her brothers to the role of wazīrs. This period lasted from 1687-1691. In 1691, Tiladummati Atoll was attacked by Indian ‘pirate’ vessels which were successfully repulsed by the Maldivian fleet, but during celebrations sparks falling into a powder magazine of the boat carrying the Sulṭān and his mother causing an explosion in which both were killed.",
-    "year": "",
+    "year": "1687",
     "reference": ["97"],
     "imageUrl": ""
   },
@@ -1317,7 +1322,7 @@
     "description": "Introduced the first Constitution which ended when he was deposed and exiled.",
     "year": "1902",
     "reference": ["150"],
-    "imageUrl": "https://scontent.fmle2-2.fna.fbcdn.net/v/t1.6435-9/119064195_3192695854183250_2033006373944418253_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeGYCQ6UY_gOmD1aHgtwWj5ex0iqZ-Togw7HSKpn5OiDDut8y_yeXfsO82BN2_fPplU&_nc_ohc=BZk00mhCnKcAX9EeaFh&_nc_ht=scontent.fmle2-2.fna&oh=00_AfB1PJJbf7Bcmta-96SLq2DmE8Qg-rSt9-jrtlpl7VAEsQ&oe=645372D6"
+    "imageUrl": ""
   },
   {
     "start_year": "1935",
