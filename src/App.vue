@@ -9,12 +9,22 @@
       :class="{ year: true, 'highlighted-year': yearData.title !== '' }"
     >
       <h3 class="year_h3">{{ yearData.year }}</h3>
+
       <div
         class="event"
         v-if="yearData.title"
         @click="toggleInfo(yearData.year)"
       >
-        <h2>{{ yearData.title }}</h2>
+        <div class="title-container">
+          <img
+            class="image"
+            :src="yearData.imageUrl"
+            :alt="yearData.description"
+            v-if="yearData.imageUrl"
+            @error="handleImageError"
+          />
+          <h2>{{ yearData.title }}</h2>
+        </div>
         <div
           class="additional-info"
           :class="{ 'show-info': activeInfo === yearData.year }"
@@ -104,6 +114,10 @@ export default {
         this.activeInfo = yearId // Open clicked item
       }
     },
+
+    handleImageError(event) {
+      event.target.style.display = 'none' // Hide the image if it fails to load
+    },
   },
   mounted() {},
 }
@@ -149,10 +163,12 @@ export default {
   border: 1px solid $primary;
   border-left: 5px solid $primary;
 
-  max-width: 500px;
+  max-width: 700px;
   margin: 0.35rem 1rem;
 
-  font-size: 1rem;
+  @include mobile {
+    font-size: 1rem;
+  }
 }
 
 .highlighted-year {
@@ -198,5 +214,15 @@ export default {
 }
 .period {
   margin-top: 1rem;
+}
+
+.title-container {
+  display: flex;
+}
+
+.image {
+  // border-radius: 100%;
+  max-width: 200px;
+  // height: auto;
 }
 </style>
