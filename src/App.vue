@@ -9,9 +9,16 @@
       :class="{ year: true, 'highlighted-year': yearData.title !== '' }"
     >
       <h3 class="year_h3">{{ yearData.year }}</h3>
-      <div class="event" v-if="yearData.title">
+      <div
+        class="event"
+        v-if="yearData.title"
+        @click="toggleInfo(yearData.year)"
+      >
         <h2>{{ yearData.title }}</h2>
-        <div class="additional-info">
+        <div
+          class="additional-info"
+          :class="{ 'show-info': activeInfo === yearData.year }"
+        >
           <p>{{ yearData.description }}</p>
           <div class="period">
             <h3>Period</h3>
@@ -34,49 +41,44 @@ export default {
     return {
       maxYears: 2000,
       startYear: 150,
-      eventsData: [
-        {
-          year: 'c. 150',
-          title: 'Brief mention of the Maldives by Ptolemy',
-          description:
-            "Claudius Ptolemy, a Greco-Roman historian and astronomer refers to Maldives in his book 'Geography of Claudius Ptolemy' which was originally titled 'Geographia' written in second century.",
-          start_year: '150',
-          end_year: '',
-          reference: ['1'],
-          imageUrl: '',
-        },
-        {
-          year: '249',
-          title: 'Earliest recorded occupation in the Maldives',
-          description:
-            'Radiocarbon dates from Nilandhoo Foamathi, Faafu Atoll represent the earliest recorded occupation in the Maldives.',
-          start_year: '249',
-          end_year: '393',
-          reference: ['2'],
-          imageUrl: '',
-        },
-        {
-          year: '345',
-          title:
-            'Probable initial construction of the Buddhist monastery at Kuruhinna Tharaagadu',
-          description:
-            'The Buddhist monastery at Kuruhinna Tharaagadu on Kaashidhoo Island, Kaafu Atoll was probably initially constructed during this period.',
-          start_year: '345',
-          end_year: '604',
-          reference: ['3'],
-          imageUrl: '',
-        },
-      ],
+      // eventsData: [
+      //   {
+      //     year: 'c. 150',
+      //     title: 'Brief mention of the Maldives by Ptolemy',
+      //     description:
+      //       "Claudius Ptolemy, a Greco-Roman historian and astronomer refers to Maldives in his book 'Geography of Claudius Ptolemy' which was originally titled 'Geographia' written in second century.",
+      //     start_year: '150',
+      //     end_year: '',
+      //     reference: ['1'],
+      //     imageUrl: '',
+      //   },
+      //   {
+      //     year: '249',
+      //     title: 'Earliest recorded occupation in the Maldives',
+      //     description:
+      //       'Radiocarbon dates from Nilandhoo Foamathi, Faafu Atoll represent the earliest recorded occupation in the Maldives.',
+      //     start_year: '249',
+      //     end_year: '393',
+      //     reference: ['2'],
+      //     imageUrl: '',
+      //   },
+      //   {
+      //     year: '345',
+      //     title:
+      //       'Probable initial construction of the Buddhist monastery at Kuruhinna Tharaagadu',
+      //     description:
+      //       'The Buddhist monastery at Kuruhinna Tharaagadu on Kaashidhoo Island, Kaafu Atoll was probably initially constructed during this period.',
+      //     start_year: '345',
+      //     end_year: '604',
+      //     reference: ['3'],
+      //     imageUrl: '',
+      //   },
+      // ],
       historicalData: historicalData,
+      activeInfo: null,
     }
   },
-  methods: {
-    isHovered(yearId) {
-      return document
-        .getElementById(yearId)
-        .classList.contains('highlighted-year')
-    },
-  },
+
   computed: {
     yearEvents() {
       const yearEvents = []
@@ -91,6 +93,16 @@ export default {
         }
       }
       return yearEvents
+    },
+  },
+
+  methods: {
+    toggleInfo(yearId) {
+      if (this.activeInfo === yearId) {
+        this.activeInfo = null // Close if already open
+      } else {
+        this.activeInfo = yearId // Open clicked item
+      }
     },
   },
   mounted() {},
@@ -115,10 +127,14 @@ export default {
   // flex-direction: column;
   margin-left: 2rem;
   font-size: 0.75rem;
-  transition: font-size 100ms ease;
   cursor: pointer;
+
   &:hover > .year_h3 {
     font-size: 1rem;
+  }
+
+  .year_h3 {
+    @include fontSizeTransition;
   }
 }
 
@@ -133,13 +149,16 @@ export default {
   border: 1px solid $primary;
   border-left: 5px solid $primary;
 
-  max-width: 300px;
+  max-width: 500px;
   margin: 0.35rem 1rem;
+
+  font-size: 1rem;
 }
 
 .highlighted-year {
   color: $primary;
   margin-bottom: 1rem;
+  margin: 0.5rem 0.5rem 1rem 0.5;
 
   &:hover {
     .event {
@@ -153,14 +172,30 @@ export default {
   }
 }
 
+// .additional-info {
+//   height: 0;
+//   overflow: hidden;
+//   transition: height 0.5s ease;
+// }
+
+// .year:hover .additional-info {
+//   height: 100px; /* Set a height that accommodates your content */
+// }
+
 .additional-info {
-  display: none;
+  transition: max-height 0.5s ease;
+  max-height: 0;
+  overflow: hidden;
+
+  /* other styles... */
 }
 
-.year:hover .additional-info {
-  display: block;
-}
+.show-info {
+  height: 100%;
+  max-height: 1000px; /* Set a value larger than your expected content height */
 
+  /* other styles... */
+}
 .period {
   margin-top: 1rem;
 }
