@@ -11,19 +11,20 @@
       <h3 class="year_h3">{{ yearData.year }}</h3>
       <div class="event" v-if="yearData.title">
         <h2>{{ yearData.title }}</h2>
-        <p>{{ yearData.description }}</p>
-        <div class="period">
-          <h3>Period</h3>
-          <p>
-            {{ yearData.start_year }}
-            <span v-if="yearData.end_year">- {{ yearData.end_year }}</span>
-          </p>
+        <div class="additional-info">
+          <p>{{ yearData.description }}</p>
+          <div class="period">
+            <h3>Period</h3>
+            <p>
+              {{ yearData.start_year }}
+              <span v-if="yearData.end_year">- {{ yearData.end_year }}</span>
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </template>
-
 <script>
 import historicalData from './assets/historicalData.json'
 
@@ -69,6 +70,13 @@ export default {
       historicalData: historicalData,
     }
   },
+  methods: {
+    isHovered(yearId) {
+      return document
+        .getElementById(yearId)
+        .classList.contains('highlighted-year')
+    },
+  },
   computed: {
     yearEvents() {
       const yearEvents = []
@@ -106,19 +114,18 @@ export default {
   display: flex;
   // flex-direction: column;
   margin-left: 2rem;
-  font-size: 1rem;
+  font-size: 0.75rem;
   transition: font-size 100ms ease;
   cursor: pointer;
-
-  &:hover:not(.highlighted-year) {
-    font-size: 1.5rem;
+  &:hover > .year_h3 {
+    font-size: 1rem;
   }
 }
 
 .event {
-  position: relative;
-  left: 1rem;
-  transform: translateY(10px);
+  // position: relative;
+  // left: 1rem;
+  // transform: translateY(10px);
   color: black;
   padding: 1rem;
   border-radius: 0 1rem 1rem 0;
@@ -126,16 +133,13 @@ export default {
   border: 1px solid $primary;
   border-left: 5px solid $primary;
 
-  max-width: 500px;
+  max-width: 300px;
+  margin: 0.35rem 1rem;
 }
 
 .highlighted-year {
   color: $primary;
   margin-bottom: 1rem;
-
-  .year_h3 {
-    font-size: 1.5rem;
-  }
 
   &:hover {
     .event {
@@ -147,6 +151,14 @@ export default {
       color: $secondary;
     }
   }
+}
+
+.additional-info {
+  display: none;
+}
+
+.year:hover .additional-info {
+  display: block;
 }
 
 .period {
