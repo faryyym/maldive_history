@@ -1,6 +1,7 @@
 <template>
-  <h1>App</h1>
+  <h1>Timeline of the Maldives</h1>
   <div class="container">
+    <div class="line"></div>
     <div
       v-for="yearData in yearEvents"
       :key="yearData.year"
@@ -8,7 +9,7 @@
       :class="{ year: true, 'highlighted-year': yearData.title !== '' }"
     >
       <h3>{{ yearData.year }}</h3>
-      <div class="event">
+      <div class="event" v-if="yearData.title">
         <h2>{{ yearData.title }}</h2>
         <p>{{ yearData.description }}</p>
       </div>
@@ -59,13 +60,14 @@ export default {
           imageUrl: '',
         },
       ],
+      historicalData: historicalData,
     }
   },
   computed: {
     yearEvents() {
       const yearEvents = []
       for (let i = this.startYear; i <= this.maxYears; i++) {
-        const eventData = this.eventsData.find(
+        const eventData = this.historicalData.find(
           (event) => event.start_year === i.toString()
         )
         if (eventData) {
@@ -82,18 +84,34 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  position: relative;
+  height: 100%; /* Make the container full height */
+}
+.line {
+  position: absolute;
+  width: 10px;
+  height: 100%; /* Set the line height to 100% of the parent's height */
+  background-color: coral;
+}
 .year {
   /* Your styles for year blocks */
+  color: #6b6b6b;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
 }
 
 .event {
-  position: absolute;
+  position: relative;
   left: 75px;
   transform: translateY(-30px);
   color: black;
-  outline: 1px solid coral;
+  padding: 1rem;
+  border-radius: 1rem;
 
-  /* top: 0; */
+  outline: 1px solid coral;
+  max-width: 500px;
 }
 
 .highlighted-year {
