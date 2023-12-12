@@ -20,7 +20,6 @@
           </p>
         </div>
       </div>
-      <!-- Add other content here -->
     </div>
   </div>
 </template>
@@ -106,8 +105,14 @@ export default {
   color: #6b6b6b;
   display: flex;
   // flex-direction: column;
-  margin: 2rem;
+  margin-left: 2rem;
   font-size: 1rem;
+  transition: font-size 100ms ease;
+  cursor: pointer;
+
+  &:hover:not(.highlighted-year) {
+    font-size: 1.5rem;
+  }
 }
 
 .event {
@@ -126,9 +131,21 @@ export default {
 
 .highlighted-year {
   color: $primary;
+  margin-bottom: 1rem;
 
   .year_h3 {
-    font-size: 2rem;
+    font-size: 1.5rem;
+  }
+
+  &:hover {
+    .event {
+      border: 1px solid $secondary;
+      border-left: 5px solid $secondary;
+    }
+
+    .year_h3 {
+      color: $secondary;
+    }
   }
 }
 
