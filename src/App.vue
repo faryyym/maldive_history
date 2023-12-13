@@ -1,5 +1,5 @@
 <template>
-  <h1>Timeline of the Maldives</h1>
+  <h1 class="heading">Timeline of the Maldives</h1>
   <div class="container">
     <div class="line"></div>
     <div
@@ -52,41 +52,8 @@ export default {
   name: 'App',
   data() {
     return {
-      maxYears: 2000,
+      maxYears: 2023,
       startYear: 150,
-      // eventsData: [
-      //   {
-      //     year: 'c. 150',
-      //     title: 'Brief mention of the Maldives by Ptolemy',
-      //     description:
-      //       "Claudius Ptolemy, a Greco-Roman historian and astronomer refers to Maldives in his book 'Geography of Claudius Ptolemy' which was originally titled 'Geographia' written in second century.",
-      //     start_year: '150',
-      //     end_year: '',
-      //     reference: ['1'],
-      //     imageUrl: '',
-      //   },
-      //   {
-      //     year: '249',
-      //     title: 'Earliest recorded occupation in the Maldives',
-      //     description:
-      //       'Radiocarbon dates from Nilandhoo Foamathi, Faafu Atoll represent the earliest recorded occupation in the Maldives.',
-      //     start_year: '249',
-      //     end_year: '393',
-      //     reference: ['2'],
-      //     imageUrl: '',
-      //   },
-      //   {
-      //     year: '345',
-      //     title:
-      //       'Probable initial construction of the Buddhist monastery at Kuruhinna Tharaagadu',
-      //     description:
-      //       'The Buddhist monastery at Kuruhinna Tharaagadu on Kaashidhoo Island, Kaafu Atoll was probably initially constructed during this period.',
-      //     start_year: '345',
-      //     end_year: '604',
-      //     reference: ['3'],
-      //     imageUrl: '',
-      //   },
-      // ],
       historicalData: historicalData,
       activeInfo: null,
     }
@@ -143,16 +110,20 @@ export default {
   display: flex;
   // flex-direction: column;
   margin-left: 2rem;
-  font-size: 0.75rem;
+  // font-size: 0.75rem;
   cursor: pointer;
 
   &:hover > .year_h3 {
-    font-size: 1rem;
-    color: $text;
+    font-size: 1.25rem;
+    color: $secondary;
   }
 
   .year_h3 {
     @include fontSizeTransition;
+  }
+
+  @include mobile {
+    margin-left: 1rem;
   }
 }
 
@@ -166,8 +137,9 @@ export default {
 
   border: 1px solid $primary;
   border-left: 5px solid $primary;
-  max-width: 400px;
+  max-width: 500px;
   margin: 0.35rem 1rem;
+  font-size: 1rem;
 
   &::before {
     content: '';
@@ -181,10 +153,6 @@ export default {
     background-size: 50%;
     opacity: 30%;
     border-radius: 0 1rem 1rem 0;
-  }
-
-  @include mobile {
-    font-size: 1rem;
   }
 }
 
@@ -239,7 +207,13 @@ export default {
   }
 }
 
-h2 {
+h2,
+.heading {
   font-family: 'Taviraj', serif;
+}
+
+.heading {
+  margin: 1rem;
+  text-align: center;
 }
 </style>
