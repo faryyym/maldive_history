@@ -1,5 +1,6 @@
 <template>
   <h1 class="heading">Timeline of the Maldives</h1>
+
   <div class="container">
     <div class="line"></div>
     <div
@@ -68,8 +69,9 @@ export default {
         )
         if (eventData) {
           yearEvents.push(eventData)
-        } else {
-          yearEvents.push({ year: i.toString(), title: '', description: '' }) // Or any default placeholder
+        } else if (i % 10 === 0) {
+          // Add a placeholder for each 10-year interval without an event
+          yearEvents.push({ year: i.toString(), title: '', description: '' })
         }
       }
       return yearEvents
@@ -213,7 +215,9 @@ h2,
 }
 
 .heading {
-  margin: 1rem;
+  margin: 3rem 0;
+  font-weight: bold;
   text-align: center;
+  text-transform: uppercase;
 }
 </style>
