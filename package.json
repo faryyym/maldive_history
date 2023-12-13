@@ -9,10 +9,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@knight-lab/timelinejs": "^3.9.3",
-    "timeline-vuejs": "^1.1.7",
-    "vis-data": "^7.1.9",
-    "vis-timeline": "^7.7.3",
     "vue": "^3.3.4"
   },
   "devDependencies": {

@@ -852,7 +852,7 @@
     "end_year": "",
     "title": "Sayyid Muḥammad Shams-al-Dīn leaves for India",
     "description": "Sayyid Muḥammad Shams-al-Dīn arrived in Malé in 1686 and introduced several religiously-inspired reforms, including the requirement for men to grow beards and for women to wear veils in public or remain at home. However, he later failed in his attempt to challenge Sulṭān Iskandar Ibrahīm and left for India in 1686 or 1687.",
-    "year": "1686 or 1687",
+    "year": "c. 1687",
     "reference": ["95"],
     "imageUrl": ""
   },
@@ -915,7 +915,7 @@
     "end_year": "1701",
     "title": "Reign of Sulṭān Muḥammad",
     "description": "Sulṭān Muḥammad married Mariyam, the widow of Sulṭān Muḥyi al-Dīn.",
-    "year": "1692-1701",
+    "year": "1692",
     "reference": ["102"],
     "imageUrl": ""
   },
@@ -1403,10 +1403,8 @@
     "title": "End of United Suvadive Republic",
     "description": "On September 30, 1963, President Abdulla Afeef Didi, in light of the deteriorating situation and increasing pressure from the Maldivian government, evacuated to Seychelles for safety. This evacuation marked the conclusive end of the United Suvadive Republic, signaling the failure of the region's aspirations for independence and democratic governance.",
     "year": "1963",
-    "reference": [
-      "https://upload.wikimedia.org/wikipedia/commons/c/c0/Abdullah_Afeef.png"
-    ],
-    "imageUrl": ""
+    "reference": [""],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Abdullah_Afeef.png"
   },
   {
     "start_year": "1965",

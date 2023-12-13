@@ -114,13 +114,18 @@ export default {
 <style scoped lang="scss">
 .container {
   position: relative;
-  // height: 100%; /* Make the container full height */
+  height: 100%; /* Make the container full height */
 }
 .line {
   position: absolute;
-  width: 10px;
   height: 100%;
+  width: 5px;
+
   background-color: $primary;
+
+  @include mobile {
+    width: 3px;
+  }
 }
 .year {
   color: $grey;
@@ -150,10 +155,11 @@ export default {
   border-radius: 0 1rem 1rem 0;
 
   border: 1px solid $primary;
-  border-left: 5px solid $primary;
-  max-width: 500px;
+  border-left: 3px solid $primary;
+  width: 100%;
   margin: 0.35rem 1rem;
   font-size: 1rem;
+  transition: border 0.3s ease;
 
   &::before {
     content: '';
@@ -178,7 +184,7 @@ export default {
   &:hover {
     .event {
       border: 1px solid $secondary;
-      border-left: 5px solid $secondary;
+      border-left: 7px solid $secondary;
     }
 
     .year_h3 {
@@ -198,6 +204,7 @@ export default {
   max-height: 1000px;
   margin: 1rem 0;
 }
+
 .period {
   margin-top: 1rem;
 }
