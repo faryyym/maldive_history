@@ -23,7 +23,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   -webkit-tap-highlight-color: transparent;
-  color: $text;
+  // color: $text;
 }
 
 #app {
@@ -35,12 +35,12 @@ body {
 }
 
 p {
-  color: $paragraph-color;
+  // color: $paragraph-color;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  color: $heading-color;
+  // color: $heading-color;
 }

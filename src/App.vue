@@ -124,6 +124,7 @@ export default {
 }
 .year {
   color: $grey;
+
   display: flex;
   margin-left: 2rem;
   cursor: pointer;

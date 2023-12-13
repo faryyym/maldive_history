@@ -1368,5 +1368,90 @@
     "year": "1954",
     "reference": [""],
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Muhammad_Fareed_Didi%2C_Sultan_of_Maldives.jpg"
+  },
+
+  {
+    "start_year": "1958",
+    "end_year": "",
+    "title": "First Rebellion in Southern Atolls",
+    "description": "In 1958, dissent and unrest surged in the southern atolls of Addu, Huvadhu, and Fuvahmulah within the Maldives. Grievances regarding economic disparities, taxation, trade restrictions, lack of infrastructure, and essential services heightened tensions against the central government in Malé. This rebellion marked the initial stirrings of discontent that later culminated in the quest for independence.",
+    "year": "1958",
+    "reference": [""],
+    "imageUrl": ""
+  },
+  {
+    "start_year": "1959",
+    "end_year": "1963",
+    "title": "Formation of United Suvadive Republic",
+    "description": "Between 1959 and 1963, the United Suvadive Republic emerged as a breakaway state from the Sultanate of Maldives, comprising the southern atolls of Addu, Huvadhu, and Fuvahmulah. Abdulla Afeef Didi became its first president. This secession unfolded within the context of Maldives' transformation into a modern nation. The southern atolls, historically affluent due to trade and fertile soils, operated a separate political and economic structure from the centralized wealth in the north. Their flourishing fleets and independent wealth challenged the centralized rule of the Sultanate. The name 'Suvadive' originated from 'Huvadhu Atoll', symbolizing the region's historical significance. The secession, marked by aspirations for democratic governance and economic independence, led to the formation of an independent state.",
+    "year": "1959",
+    "reference": [""],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Flag_of_the_United_Suvadive_Republic.svg/1920px-Flag_of_the_United_Suvadive_Republic.svg.png"
+  },
+  {
+    "start_year": "1962",
+    "end_year": "",
+    "title": "Depopulation of Havaru Thinadhoo",
+    "description": "In February 1962, the Kingdom of Maldives initiated the depopulation of Havaru Thinadhoo in the Suvadive region. This action involved the forced relocation or displacement of inhabitants, contributing to the escalating tensions between the southern atolls and the central Maldivian government.",
+    "year": "1962",
+    "reference": [""],
+    "imageUrl": ""
+  },
+  {
+    "start_year": "1963",
+    "end_year": "",
+    "title": "End of United Suvadive Republic",
+    "description": "On September 30, 1963, President Abdulla Afeef Didi, in light of the deteriorating situation and increasing pressure from the Maldivian government, evacuated to Seychelles for safety. This evacuation marked the conclusive end of the United Suvadive Republic, signaling the failure of the region's aspirations for independence and democratic governance.",
+    "year": "1963",
+    "reference": [
+      "https://upload.wikimedia.org/wikipedia/commons/c/c0/Abdullah_Afeef.png"
+    ],
+    "imageUrl": ""
+  },
+  {
+    "start_year": "1965",
+    "end_year": "1968",
+    "title": "Independence Day",
+    "description": "On July 26, 1965, Maldives gained independence from the United Kingdom after an agreement signed by Ibrahim Nasir Rannabandeyri Kilegefan, the Prime Minister, marking the end of British responsibility for defense and external affairs. ",
+    "year": "1965",
+    "reference": [""],
+    "imageUrl": "https://maldivesindependent.com/files/2015/07/Independence-Signing-Ceremony.jpg"
+  },
+  {
+    "start_year": "1968",
+    "end_year": "",
+    "title": "Constitutional Referendum: From Monarchy to Republic",
+    "description": "A constitutional referendum was held in the Maldives on 15 March 1968. Following a vote in parliament and a national referendum, 81.23% voted in favor of establishing a republic, ending the 853 year old monarchy.",
+    "year": "1968",
+    "reference": [""],
+    "imageUrl": ""
+  },
+
+  {
+    "start_year": "1968",
+    "end_year": "1978",
+    "title": "Presidency of Ibrahim Nasir Rannabandeyri Kilegefan",
+    "description": "Before becoming the second President of the Republic of Maldives, he served as the Prime Minister from 1957 to 1968 under the previous monarchy. He famously led the nation to independence post-British protectorate. Credited for modernizing education, introducing media, and economic strides, his tenure also faced controversies. Notable achievements include Hulhulé airport's construction and economic progress, but his legacy is clouded by the Havaru Thinadhoo incident and disputed tax reforms.",
+    "year": "1968",
+    "reference": [""],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Ibrahim_Nasir.png/440px-Ibrahim_Nasir.png"
+  },
+  {
+    "start_year": "1978",
+    "end_year": "2008",
+    "title": "Presidency of Maumoon Abdul Gayoom",
+    "description": "Maumoon Abdul Gayoom served as the President of the Maldives for three decades from 1978 to 2008. He assumed office after being nominated by the People's Majlis and succeeded Ibrahim Nasir. During his tenure, he implemented various policies and reforms while also facing criticism for authoritarianism and human rights issues.",
+    "year": "1978",
+    "reference": [""],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Maumoon-Abdul-Gayoom.jpg/440px-Maumoon-Abdul-Gayoom.jpg"
+  },
+  {
+    "start_year": "1988",
+    "end_year": "1988",
+    "title": "1988 Maldives Coup Attempt and Operation Cactus",
+    "description": "On November 11, a group led by businessman Abdullah Luthufi, assisted by armed mercenaries from the People's Liberation Organisation of Tamil Eelam (PLOTE), attempted a coup to overthrow the government in the Maldives. Around 80 armed mercenaries infiltrated Malé, seizing major government buildings, the airport, port, and media stations. They marched towards the Presidential Palace but were unable to capture President Gayoom, who had been escorted to a safe location. The mercenaries took the Education Minister hostage. President Gayoom sought military aid from Sri Lanka, Pakistan, Singapore, and the United States, but none were able to respond swiftly. Finally, he sought help from India, which swiftly accepted the request. Within 16 hours of the SOS, India prepared for Operation Cactus to assist the Maldives.",
+    "year": "1988",
+    "reference": [""],
+    "imageUrl": "https://miro.medium.com/v2/resize:fit:1400/0*7-Ac76VbXDaUK08W.jpg"
   }
 ]
