@@ -45,6 +45,10 @@
       </div>
     </div>
   </div>
+
+  <footer>
+    <a href="https://github.com/faryyym" target="_blank">faryyym</a>
+  </footer>
 </template>
 <script>
 import historicalData from './assets/historicalData.json'
@@ -62,16 +66,28 @@ export default {
 
   computed: {
     yearEvents() {
+      const eventsByYear = {}
+
+      // Group events by year
+      this.historicalData.forEach((event) => {
+        const year = event.start_year
+        if (!eventsByYear[year]) {
+          eventsByYear[year] = []
+        }
+        eventsByYear[year].push(event)
+      })
+
+      // Create an array of years with their events
       const yearEvents = []
       for (let i = this.startYear; i <= this.maxYears; i++) {
-        const eventData = this.historicalData.find(
-          (event) => event.start_year === i.toString()
-        )
-        if (eventData) {
-          yearEvents.push(eventData)
+        const year = i.toString()
+        const events = eventsByYear[year] || []
+
+        if (events.length > 0) {
+          yearEvents.push(...events)
         } else if (i % 10 === 0) {
           // Add a placeholder for each 10-year interval without an event
-          yearEvents.push({ year: i.toString(), title: '', description: '' })
+          yearEvents.push({ year, title: '', description: '' })
         }
       }
       return yearEvents
@@ -103,16 +119,13 @@ export default {
 .line {
   position: absolute;
   width: 10px;
-  height: 100%; /* Set the line height to 100% of the parent's height */
+  height: 100%;
   background-color: $primary;
 }
 .year {
-  /* Your styles for year blocks */
   color: $grey;
   display: flex;
-  // flex-direction: column;
   margin-left: 2rem;
-  // font-size: 0.75rem;
   cursor: pointer;
 
   &:hover > .year_h3 {
@@ -131,9 +144,7 @@ export default {
 
 .event {
   position: relative;
-  // left: 1rem;
-  // transform: translateY(10px);
-  color: black;
+  color: $text;
   padding: 1rem;
   border-radius: 0 1rem 1rem 0;
 
@@ -216,8 +227,16 @@ h2,
 
 .heading {
   margin: 3rem 0;
+  padding-bottom: 3rem;
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
+  border-bottom: 1px solid $text;
+}
+
+footer {
+  margin-top: 3rem;
+  text-align: end;
+  font-size: 0.75rem;
 }
 </style>
