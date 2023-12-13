@@ -1,5 +1,6 @@
 <template>
   <h1 class="heading">Timeline of the Maldives</h1>
+  <Controls @showInfoClick="showInfo" :showingInfo="showingInfo" />
 
   <div class="container">
     <div class="line"></div>
@@ -31,9 +32,12 @@
         </div>
         <div
           class="additional-info"
-          :class="{ 'show-info': activeInfo === yearData.year }"
+          ref="additionalInfoRef"
+          :class="{
+            'show-info': activeInfo === yearData.year,
+          }"
         >
-          <p>{{ yearData.description }}</p>
+          <p v-if="yearData.description">{{ yearData.description }}</p>
           <div class="period">
             <h3>Period</h3>
             <p>
@@ -52,15 +56,18 @@
 </template>
 <script>
 import historicalData from './assets/historicalData.json'
+import Controls from './components/Controls.vue'
 
 export default {
   name: 'App',
+  components: { Controls },
   data() {
     return {
       maxYears: 2023,
       startYear: 150,
       historicalData: historicalData,
       activeInfo: null,
+      showingInfo: false,
     }
   },
 
@@ -105,6 +112,16 @@ export default {
 
     handleImageError(event) {
       event.target.style.display = 'none' // Hide the image if it fails to load
+    },
+
+    showInfo() {
+      const additionalInfoElement = this.$refs.additionalInfoRef // Access the element using the reference
+      if (additionalInfoElement) {
+        additionalInfoElement.forEach((element) => {
+          element.classList.toggle('show-info') // Toggle the 'show-info' class
+        })
+      }
+      this.showingInfo = !this.showingInfo
     },
   },
   mounted() {},
@@ -171,7 +188,7 @@ export default {
     z-index: -1;
     background-image: url('./assets/stone_texture.jpg');
     background-size: 50%;
-    opacity: 30%;
+    opacity: 20%;
     border-radius: 0 1rem 1rem 0;
   }
 }
@@ -202,7 +219,7 @@ export default {
 .show-info {
   height: 100%;
   max-height: 1000px;
-  margin: 1rem 0;
+  margin-top: 0.75rem;
 }
 
 .period {
