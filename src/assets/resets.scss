@@ -62,13 +62,15 @@ select {
   font: inherit;
 }
 
-button {
+button,
+select {
   font-size: 0.85rem;
   padding: 0.5rem;
   border-radius: 1rem;
   border: 1px solid $primary;
   color: $primary;
   cursor: pointer;
+  background-color: $light-grey;
 
   &:hover {
     background-color: $secondary;
@@ -76,3 +78,19 @@ button {
     border-color: $secondary;
   }
 }
+
+// select {
+//   padding: 0.5rem;
+//   font-size: 0.85rem;
+//   border-radius: 1rem;
+//   background-color: $light-grey;
+//   border: 1px solid $primary;
+//   cursor: pointer;
+//   color: $primary;
+
+//   &:hover {
+//     background-color: $secondary;
+//     color: white;
+//     border-color: $secondary;
+//   }
+// }

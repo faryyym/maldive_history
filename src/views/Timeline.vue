@@ -1,6 +1,10 @@
 <template>
   <h1 class="heading">Timeline of the Maldives</h1>
-  <Controls @showInfoClick="showInfo" :showingInfo="showingInfo" />
+  <Controls
+    @showInfoClick="showInfo"
+    :showingInfo="showingInfo"
+    :eventsLoaded="eventsLoaded"
+  />
 
   <div class="container" v-if="events && events.length > 0">
     <div class="line"></div>
@@ -67,6 +71,7 @@ export default {
       startYear: 150,
       activeInfo: null,
       showingInfo: false,
+      eventsLoaded: false,
     }
   },
   props: {
@@ -101,6 +106,9 @@ export default {
           // Add a placeholder for each 10-year interval without an event
           yearEvents.push({ year, title: '', description: '' })
         }
+      }
+      if (yearEvents.length > 0) {
+        this.eventsLoaded = true
       }
       return yearEvents
     },
