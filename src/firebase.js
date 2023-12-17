@@ -3,13 +3,13 @@ import { getDatabase, ref, onValue } from 'firebase/database'
 
 // Initialize Firebase
 const firebaseConfig = {
-  apiKey: 'AIzaSyABkCja5YpqRbedoTeDHl8_k2a6IMXtGwA',
-  authDomain: 'mahalhistory.firebaseapp.com',
-  databaseURL: 'https://mahalhistory-default-rtdb.firebaseio.com',
-  projectId: 'mahalhistory',
-  storageBucket: 'mahalhistory.appspot.com',
-  messagingSenderId: '885655861322',
-  appId: '1:885655861322:web:52e81a11275a245aaeceb3',
+  apiKey: import.meta.env.VITE_APP_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_APP_FIREBASE_AUTH_DOMAIN,
+  databaseURL: import.meta.env.VITE_APP_FIREBASE_DATABASE_URL,
+  projectId: import.meta.env.VITE_APP_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_FIREBASE_APP_ID,
 }
 
 const app = initializeApp(firebaseConfig)
