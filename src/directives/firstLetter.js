@@ -1,7 +1,6 @@
 export const firstLetter = {
   mounted(el) {
     const words = el.textContent.split(' ')
-    console.log(words)
     const modifiedText = words
       .map(
         (word) =>

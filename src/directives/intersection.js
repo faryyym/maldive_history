@@ -1,7 +1,7 @@
 export const inViewport = {
   mounted(el, binding) {
     const options = {
-      threshold: 0.5, // Set the threshold as needed
+      threshold: 0.5, // Set the threshold
     }
 
     const observer = new IntersectionObserver(([entry]) => {
