@@ -114,3 +114,17 @@ h4 {
     width: 0; /* Back to no border */
   }
 }
+
+/* Example animation class */
+.viewport-anim {
+  /* Define your animation properties */
+  /* For example: */
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.viewport-anim.active {
+  opacity: 1;
+  transform: translateX(0);
+}

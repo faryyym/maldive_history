@@ -9,6 +9,8 @@
       :key="index"
       :id="yearData.year"
       :class="{ year: true, 'highlighted-year': yearData.title !== '' }"
+      v-in-viewport
+      class="viewport-anim"
     >
       <h3 class="year_h3">{{ yearData.year }}</h3>
 
@@ -54,6 +56,8 @@
 </template>
 <script>
 import Controls from '../components/Controls.vue'
+import { inViewport } from '../directives/intersection'
+
 export default {
   name: 'Timeline',
   components: { Controls },
@@ -67,6 +71,9 @@ export default {
   },
   props: {
     events: Array,
+  },
+  directives: {
+    inViewport,
   },
 
   computed: {
@@ -129,8 +136,8 @@ export default {
 <style lang="scss">
 .container {
   position: relative;
-  height: 100%; /* Make the container full height */
-  min-height: 100vh;
+  height: 100%;
+  overflow-x: hidden;
 }
 .line {
   position: absolute;
