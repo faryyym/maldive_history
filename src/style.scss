@@ -45,76 +45,6 @@ h4 {
   // color: $heading-color;
 }
 
-// ANIMATIONS
-.loading {
-  /* Center the loading text */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px; /* Adjust height as needed */
-}
-
-/* CSS animation for loading */
-.loading::after {
-  content: '';
-  display: block;
-  width: 40px; /* Adjust size of the loader */
-  height: 40px; /* Adjust size of the loader */
-  border-radius: 10%;
-  border-top-right-radius: 50%;
-  border-bottom-left-radius: 50%;
-  border: 5px solid #ccc; /* Adjust color and thickness */
-  border-top-color: $primary; /* Adjust color */
-  border-right-color: $primary; /* Adjust color */
-  border-bottom-color: $secondary;
-  border-left-color: $secondary;
-  animation: spin 5s linear infinite; /* Animation properties */
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg); /* Starting position */
-  }
-  100% {
-    transform: rotate(-360deg); /* Ending position */
-  }
-}
-
-.border-animate {
-  margin: 3rem 0;
-  padding-bottom: 3rem;
-  font-weight: bold;
-  text-align: center;
-  text-transform: uppercase;
-  position: relative; /* Required for pseudo-element */
-}
-
-/* Pseudo-element for the animated border */
-.border-animate::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 100%; /* Start with full width */
-  height: 1px; /* Border height */
-  background-color: $text; /* Your border color */
-  animation: animateBorder 2s linear infinite; /* Animation properties */
-  transform: translateX(-50%); /* Center the pseudo-element */
-}
-
-/* Keyframes for the animation */
-@keyframes animateBorder {
-  0% {
-    width: 0; /* Start with no border */
-  }
-  50% {
-    width: 100%; /* Full border at half of the animation duration */
-  }
-  100% {
-    width: 0; /* Back to no border */
-  }
-}
-
 /* Example animation class */
 .viewport-anim {
   /* Define your animation properties */
@@ -132,4 +62,75 @@ h4 {
 .viewport-anim.active {
   opacity: 1;
   transform: translateX(0);
+}
+
+// ANIMATIONS
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* Adjust height as needed */
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 40px; /* Adjust size of the loader */
+    height: 40px; /* Adjust size of the loader */
+    border-radius: 50%;
+    border: 7px solid #ccc; /* Adjust color and thickness */
+    border-color: $secondary;
+    // border-top-color: $primary;
+
+    animation: spin 5s linear infinite; /* Animation properties */
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 60px; /* Adjust size of the loader */
+    height: 60px;
+    border-radius: 50%;
+    border: 10px solid #ccc; /* Adjust color and thickness */
+    border-color: $primary;
+    // border-top-color: $secondary;
+    animation: spinReverse 1s linear infinite;
+    // animation-delay: -10.5s; /* Delay the animation for the second spinner */
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); /* Starting position */
+    scale: 0.5;
+  }
+  50% {
+    scale: 1;
+  }
+  100% {
+    transform: rotate(-360deg); /* Ending position */
+    scale: 0.5;
+  }
+}
+
+@keyframes spinReverse {
+  0% {
+    transform: rotate(0deg); /* Starting position */
+    scale: 0.5;
+  }
+  50% {
+    scale: 0.8;
+  }
+  100% {
+    transform: rotate(360deg); /* Ending position */
+    scale: 0.5;
+  }
+}
+
+.first-letter {
+  font-size: 150%; /* Adjust the size of the first letter */
+  /* Other styles for the first letter */
 }

@@ -1,5 +1,7 @@
 <template>
   <div id="app-container">
+    <h1 class="heading" v-first-letter>Timeline of the Maldives</h1>
+
     <div class="timeline-container">
       <Timeline :events="events" />
     </div>
@@ -12,6 +14,8 @@
 <script>
 import Timeline from './views/Timeline.vue'
 import { db, ref, onValue } from './firebase.js'
+import { firstLetter } from './directives/firstLetter'
+
 export default {
   name: 'App',
   components: {
@@ -22,6 +26,8 @@ export default {
       events: [],
     }
   },
+  directives: { firstLetter },
+
   async mounted() {
     await this.fetchEvents()
   },
@@ -62,5 +68,15 @@ footer {
   margin-bottom: 1rem;
   text-align: end;
   font-size: 0.75rem;
+}
+
+.heading {
+  margin: 3rem 0;
+  padding-bottom: 3rem;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: 1px solid $text;
+  font-family: 'Taviraj', serif;
 }
 </style>

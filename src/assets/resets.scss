@@ -29,13 +29,14 @@ ol[role='list'] {
 }
 
 /* Set core root defaults */
-html:focus-within {
+html {
   scroll-behavior: smooth;
 }
 
 /* Set core body defaults */
 body {
   text-rendering: optimizeSpeed;
+  scroll-behavior: smooth;
 }
 
 /* A elements that don't have a class get default styles */
@@ -75,7 +76,7 @@ select {
   &:hover {
     background-color: $secondary;
     color: white;
-    border-color: $secondary;
+    border-color: $primary;
   }
 }
 

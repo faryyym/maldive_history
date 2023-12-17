@@ -1,7 +1,7 @@
 <template>
   <transition name="fade">
     <div v-if="!isScrolling && eventsLoaded" class="controls">
-      <button @click="emitShowInfo">
+      <button @click="emitShowInfo" :class="{ active: showingInfo }">
         {{ showingInfo ? 'Hide' : 'Show' }} Info
       </button>
       <div class="links">
@@ -86,6 +86,11 @@ button {
   border-bottom-right-radius: 0;
 }
 
+.active {
+  background-color: $secondary;
+  color: white;
+}
+
 select {
   border-top: 0;
   border-top-left-radius: 0;
@@ -93,6 +98,7 @@ select {
   outline: none;
   text-align: center;
 }
+
 .links {
   display: flex;
   justify-content: center;
@@ -101,8 +107,8 @@ select {
 }
 .controls {
   position: fixed;
-  top: 1rem;
   right: 1rem;
+  bottom: 1rem;
   z-index: 99;
   display: flex;
   flex-direction: column;

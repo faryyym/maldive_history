@@ -1,5 +1,4 @@
 <template>
-  <h1 class="heading">Timeline of the Maldives</h1>
   <Controls
     @showInfoClick="showInfo"
     :showingInfo="showingInfo"
@@ -141,7 +140,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .container {
   position: relative;
   height: 100%;
@@ -260,17 +259,7 @@ export default {
   }
 }
 
-h2,
-.heading {
+h2 {
   font-family: 'Taviraj', serif;
-}
-
-.heading {
-  margin: 3rem 0;
-  padding-bottom: 3rem;
-  font-weight: bold;
-  text-align: center;
-  text-transform: uppercase;
-  border-bottom: 1px solid $text;
 }
 </style>
